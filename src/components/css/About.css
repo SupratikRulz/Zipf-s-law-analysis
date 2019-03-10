@@ -1,0 +1,15 @@
+.header {
+  font-size: 32px;
+  margin-top: 20px;
+  color: #008CBA;
+}
+
+.about-container {
+  justify-content: left;
+  text-align: justify;
+  color: whitesmoke;
+}
+
+.about {
+  padding: 0 40px;
+}
