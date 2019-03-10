@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm run scrape`
+
+Runs the wikipedia scraper and writes the words in src/words.json
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
