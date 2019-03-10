@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       data: [],
       wordFreqArr: [],
-      wordCount: 0
+      totalWordCount: 0
     }
   }
 
@@ -19,7 +19,7 @@ class App extends Component {
   componentDidMount() {
     let wordFrequencyObj = {},
       wordFreqArr,
-      wordCount;
+      totalWordCount;
     this.setState({
       data: scrapedData
     })
@@ -33,12 +33,9 @@ class App extends Component {
                       .map(key => ({name: key, frequency: wordFrequencyObj[key]}))
                       .sort((objA, objB) => objB.frequency - objA.frequency);
 
-    wordCount = wordFreqArr.length;
+    totalWordCount = wordFreqArr.length;
 
-    this.setState({wordFreqArr, wordCount})
-
-
-
+    this.setState({wordFreqArr, totalWordCount})
   }
 
    render() {
