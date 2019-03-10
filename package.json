@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "puppeteer": "^1.13.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8"
   },
   "scripts": {
+    "scrape": "node src/scrape-wiki.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
