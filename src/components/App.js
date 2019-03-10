@@ -3,7 +3,7 @@ import logo from './../icons/logo.svg';
 import './css/App.css';
 
 import RenderChart from './RenderChart';
-
+import About from './About';
 import scrapedData from './../words.json';
 
 class App extends Component {
@@ -13,8 +13,10 @@ class App extends Component {
     this.state = {
       data: [],
       wordFreqArr: [],
-      totalWordCount: 0
-    }
+      totalWordCount: 0,
+      numberOfDisplayWords: 20
+    };
+    this.currentCount = 20;
   }
 
 
@@ -42,11 +44,31 @@ class App extends Component {
 
    render() {
     return (
-      <div className="App">
-        <RenderChart wordFreqArr={this.state.wordFreqArr.slice(0, 20)}/>
-        {/* {this.state.wordFreqArr.map(word => <div>{word["name"]}&nbsp; {word["frequency"]}</div>)} */}
+      <div className='App'>
+        <About />
+        <div className='controller'>
+          <input type='number' min='20' max={this.state.totalWordCount} defaultValue='20' onBlur={this.setMaxCount} className='input-box'/>
+          <button onClick={this.setNumberOfDisplayWords} className='btn-apply'>Apply</button>
+        </div>
+        <RenderChart wordFreqArr={this.state.wordFreqArr.slice(0, this.state.numberOfDisplayWords)}/>
       </div>
     );
+  }
+
+  setMaxCount = event => {
+    let count = Number(event.target.value);
+
+    if (count < 20) {
+      count = 20;
+    } else if (count > this.state.totalWordCount) {
+      count = this.state.totalWordCount;
+    }
+    event.target.value = count;
+    this.currentCount = count;
+  }
+
+  setNumberOfDisplayWords = () => {
+    this.setState({numberOfDisplayWords: this.currentCount});
   }
 }
 
