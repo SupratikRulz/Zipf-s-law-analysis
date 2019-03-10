@@ -1,4 +1,8 @@
+The project is hosted at [netlify](https://5c84d1dbb3f1d20008273966--zipfs-law-analysis.netlify.com/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Screenshot
+![Zipf's law](/zipfs-law.png "Zipf's Law")
 
 ## Available Scripts
 
