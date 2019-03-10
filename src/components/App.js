@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './../icons/logo.svg';
 import './css/App.css';
 
+import RenderChart from './RenderChart';
+
 import scrapedData from './../words.json';
 
 class App extends Component {
@@ -41,7 +43,8 @@ class App extends Component {
    render() {
     return (
       <div className="App">
-        {this.state.wordFreqArr.map(word => <div>{word["name"]}&nbsp; {word["frequency"]}</div>)}
+        <RenderChart wordFreqArr={this.state.wordFreqArr.slice(0, 20)}/>
+        {/* {this.state.wordFreqArr.map(word => <div>{word["name"]}&nbsp; {word["frequency"]}</div>)} */}
       </div>
     );
   }
