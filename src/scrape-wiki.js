@@ -1,6 +1,6 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
-const topics = ['cricket', 'football', 'bollywood', 'hollywood', 'life', 'sex', 'india', 'science', 'existence', 'reality', 'geography', 'history', 'javascript'];
+const topics = ['cricket', 'football', 'Donald Trump', "Zipf's_law", 'life', 'india', 'science', 'programming', 'algorithms', 'geography', 'history', 'javascript'];
 
 
 async function scrapeWiki() {
